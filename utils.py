@@ -243,7 +243,7 @@ def extract_user(message: Message) -> Union[int, str]:
             message.entities[1].type == enums.MessageEntityType.TEXT_MENTION
         ):
            
-            required_entity = message.entities[1]
+            required_entity = message.entities[0]
             user_id = required_entity.user.id
             user_first_name = required_entity.user.first_name
         else:
